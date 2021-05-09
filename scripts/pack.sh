@@ -24,3 +24,4 @@ rm $GITHUB_WORKSPACE/manifest.json
 mv $GITHUB_WORKSPACE/.manifest.json.bak $GITHUB_WORKSPACE/manifest.json
 
 echo $(printf "::set-output name=filename::%s" $FILENAME)
+echo $(printf "Filename is: %s" $FILENAME)
