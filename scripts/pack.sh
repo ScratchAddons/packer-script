@@ -18,7 +18,7 @@ git commit --no-gpg-sign -m $FILENAME
 ZIP_PATH=$GITHUB_WORKSPACE/.dist/$FILENAME
 
 git archive --format=zip -o $ZIP_PATH HEAD
-unzip -d $GITHUB_WORKSPACE/.dist/extracted $ZIP_PATH
+unzip -d $GITHUB_WORKSPACE/.dist/extracted $ZIP_PATH > /dev/null
 rm $ZIP_PATH
 rm $GITHUB_WORKSPACE/manifest.json
 mv $GITHUB_WORKSPACE/.manifest.json.bak $GITHUB_WORKSPACE/manifest.json
