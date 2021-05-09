@@ -7,3 +7,8 @@ runs:
         - run: bash $GITHUB_ACTION_PATH/scripts/pack.sh
           shell: bash
           name: "Pack extension"
+          id: pack
+outputs:
+    filename:
+        description: 'The filename'
+        value: ${{ steps.pack.outputs.filename }}
