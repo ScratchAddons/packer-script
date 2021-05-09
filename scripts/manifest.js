@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
-const {default: generate} = await import(path.join(GITHUB_WORKSPACE, ".github/gen-manifest.js"));
+const {default: generate} = await import(path.join(GITHUB_WORKSPACE, ".github/gen-manifest.mjs"));
 
 const ENVIRONMENT = process.env.ENVIRONMENT;
 
