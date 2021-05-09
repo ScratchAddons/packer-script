@@ -1,8 +1,6 @@
 #!/bin/bash
 cd $GITHUB_WORKSPACE
 
-export ENVIRONMENT=$INPUT_ENVIRONMENT
-
 echo $(printf "Packing build for %s" $ENVIRONMENT)
 
 node $GITHUB_ACTION_PATH/scripts/manifest.js

@@ -1,10 +1,6 @@
 name: "Scratch Addons"
 author: "apple502j"
 description: "Packs Scratch Addons extension."
-inputs:
-  ENVIRONMENT:
-    description: 'Environment'
-    required: true
 runs:
     using: "composite"
     steps:
