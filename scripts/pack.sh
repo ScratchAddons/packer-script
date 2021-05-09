@@ -9,6 +9,12 @@ mkdir $GITHUB_WORKSPACE/.dist 2>/dev/null
 VERSION_NAME=$(cat $GITHUB_WORKSPACE/manifest.json | jq -r ".version_name" | sed "s/[.-]/_/g;s/prerelease/pre/")
 FILENAME=$(printf "ScratchAddons-%s-%s.zip" $VERSION_NAME $ENVIRONMENT) 
 
+git config user.email "73682299+scratchaddons-bot[bot]@users.noreply.github.com"
+git config user.name "scratchaddons-bot[bot]"
+
+git add .
+git commit --no-gpg-sign -m $FILENAME
+
 git archive --format=zip -o $GITHUB_WORKSPACE/.dist/$FILENAME HEAD
 rm $GITHUB_WORKSPACE/manifest.json
 mv $GITHUB_WORKSPACE/.manifest.json.bak $GITHUB_WORKSPACE/manifest.json
