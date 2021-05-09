@@ -1,0 +1,13 @@
+name: "Scratch Addons"
+author: "apple502j"
+description: "Packs Scratch Addons extension."
+inputs:
+  ENVIRONMENT:
+    description: 'Environment'
+    required: true
+runs:
+    using: "composite"
+    steps:
+        - run: bash $GITHUB_ACTION_PATH/scripts/pack.sh
+          shell: bash
+          name: "Pack extension"

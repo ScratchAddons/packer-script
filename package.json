@@ -1,0 +1,19 @@
+{
+  "name": "packer-script",
+  "version": "1.0.0",
+  "description": "Packs Scratch Addons.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScratchAddons/packer-script.git"
+  },
+  "author": "apple502j",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ScratchAddons/packer-script/issues"
+  },
+  "homepage": "https://github.com/ScratchAddons/packer-script#readme",
+  "private": true,
+  "type": "module"
+}
