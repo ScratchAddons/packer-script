@@ -11,6 +11,9 @@ const MANIFEST_PATH = path.join(GITHUB_WORKSPACE, "manifest.json");
 await fs.copyFile(MANIFEST_PATH, path.join(GITHUB_WORKSPACE, ".manifest.json.bak"));
 
 const manifestFile = await fs.readFile(MANIFEST_PATH, "utf8");
+console.log("Generating JSON for: ", ENVIRONMENT);
 const manifest = generate(ENVIRONMENT, JSON.parse(manifestFile));
+console.log("Manifest created at: ", MANIFEST_PATH);
+console.dir(manifest);
 
 await fs.writeFile(MANIFEST_PATH, JSON.stringify(manifest), "utf8");
