@@ -4,9 +4,9 @@ cd $GITHUB_WORKSPACE
 echo $(printf "Packing build for %s" $ENVIRONMENT)
 
 node $GITHUB_ACTION_PATH/scripts/manifest.js
-npm ci --prefix $GITHUB_ACTION_PATH/webpages
-npm run build
-find $GITHUB_ACTION_PATH/webpages -mindepth 1 -name dist -prune -o -exec rm -rf {} \;
+npm ci --prefix $GITHUB_WORKSPACE/webpages
+npm exec --prefix $GITHUB_WORKSPACE/webpages vite build 
+find $GITHUB_WORKSPACE/webpages -mindepth 1 -name dist -prune -o -exec rm -rf {} \;
 mkdir $GITHUB_WORKSPACE/.dist 2>/dev/null
 VERSION_NAME=$(cat $GITHUB_WORKSPACE/manifest.json | jq -r ".version_name" | sed "s/[.-]/_/g;s/prerelease/pre/")
 FILENAME=$(printf "%s-%s-scratchaddons.zip" $ENVIRONMENT $VERSION_NAME)
